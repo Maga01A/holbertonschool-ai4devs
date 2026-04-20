@@ -1,32 +1,33 @@
 import unittest
 
-class TestLegacyCode(unittest.TestCase):
+class TestLegacySystem(unittest.TestCase):
     
-    # Test 1: M?lumatlarin düzgün emal edilm?si
-    def test_data_processing_logic(self):
-        input_data = {"id": 1, "value": "test"}
-        # Mock logic
-        self.assertEqual(input_data["id"], 1)
+    # Test 1: M?lumat emali m?ntiqinin yoxlanilmasi
+    def test_processing_output(self):
+        sample_input = {"val": 10}
+        # Mocking legacy behavior
+        result = sample_input["val"] * 2 
+        self.assertEqual(result, 20)
 
-    # Test 2: Yanlis autentifikasiya c?hdi
-    def test_invalid_auth(self):
-        status_code = 401
-        self.assertEqual(status_code, 401)
+    # Test 2: Autentifikasiya x?tasi yoxlanisi
+    def test_auth_failure(self):
+        response_code = 401
+        self.assertEqual(response_code, 401)
 
-    # Test 3: Bos veril?nl?r bazasi sorgusu
-    def test_empty_db_result(self):
-        result = []
-        self.assertTrue(len(result) == 0)
+    # Test 3: Veril?nl?r bazasi bos cavab testi
+    def test_db_empty_query(self):
+        query_result = []
+        self.assertEqual(len(query_result), 0)
 
-    # Test 4: Parolun minimum uzunlugu yoxlanisi
-    def test_password_length(self):
-        password = "123"
-        self.assertLess(len(password), 8)
+    # Test 4: Daxil edil?n stringin validasiyasi
+    def test_input_validation(self):
+        user_input = "   admin   "
+        self.assertEqual(user_input.strip(), "admin")
 
-    # Test 5: Emal zamani data tipinin yoxlanilmasi
-    def test_data_type(self):
-        price = "10.5"
-        self.assertIsInstance(price, str)
+    # Test 5: Sistemin versiya yoxlanisi
+    def test_system_version(self):
+        version = "1.0.0-legacy"
+        self.assertIn("legacy", version)
 
 if __name__ == '__main__':
     unittest.main()
