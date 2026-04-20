@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "AI Code Review",
+            "type": "shell",
+            "command": "echo 'Analysing ...'; npx ai-code-reviewer --file ",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Generate Documentation",
+            "type": "shell",
+            "command": "echo 'Generating docs for ...'; pydocstyle  || jsdoc ",
+            "args": [],
+            "problemMatcher": []
+        }
+    ]
+}
