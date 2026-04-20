@@ -1,0 +1,17 @@
+﻿graph TD
+  User((Rider/Driver)) --> Frontend[Mobile/Web App]
+  Frontend --> Gateway[API Gateway]
+
+  subgraph "Backend Services"
+    Gateway --> AuthService[Auth & User Service]
+    Gateway --> MatchingService[Ride Matching Service]
+    Gateway --> TrackingService[Live Tracking Service]
+    Gateway --> PaymentService[Payment & Rewards Service]
+  end
+
+  subgraph "Persistence Layer"
+    AuthService --> AuthDB[(Auth DB)]
+    MatchingService --> RideDB[(Ride DB)]
+    TrackingService --> GeoDB[(Geo-Spatial DB)]
+    PaymentService --> PayDB[(Transaction DB)]
+  end
