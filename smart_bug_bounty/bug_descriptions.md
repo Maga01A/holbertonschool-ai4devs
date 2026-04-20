@@ -14,4 +14,4 @@
 
 ## bug4.py
 - **Intended Behavior**: Create a fresh cart for each new user if one is not provided.
-- **Current Issue**: Uses a mutable default argument ([]), causing carts to persist across different function calls.
+- **Current Issue**: Uses a mutable default argument ([]), causing data to persist across different function calls.
