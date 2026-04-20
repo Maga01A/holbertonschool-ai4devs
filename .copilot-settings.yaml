@@ -1,0 +1,18 @@
+languages:
+  python:
+    style_guide: "black"
+    type_hints: true
+    prefer_functional: false
+  javascript:
+    style_guide: "airbnb"
+    semicolons: true
+    framework: "react"
+
+workflows:
+  code_review:
+    enabled: true
+    focus_areas: ["security", "performance", "readability"]
+  documentation:
+    enabled: true
+    style: "google"
+    auto_generate: false
