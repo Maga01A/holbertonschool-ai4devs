@@ -1,32 +1,23 @@
-Application Concept – EcoRide
-Application
+# Application Concept – EcoRide
+
+## 1. Application
 EcoRide is a sustainable ride-sharing platform that prioritizes environmental impact reduction while providing convenient, real-time transportation solutions for eco-conscious individuals and corporate partners.
 
-Core Features
-Sustainability-Driven Matching: An AI algorithm that prioritizes shared rides, shorter routes, and electric vehicles (EV) to minimize carbon emissions.
+## 2. Core Features
+- **Sustainability-Driven Matching**: An AI algorithm that prioritizes shared rides, shorter routes, and electric vehicles (EV).
+- **Eco-Impact Dashboard**: Real-time carbon footprint tracking with gamified achievements.
+- **EV Prioritization**: A preference scoring system that gives premium placement to electric vehicle drivers.
+- **Corporate Commute Coordination**: Tools for recurring ride scheduling and group coordination for companies.
+- **Integrated Green Payments**: Pricing that includes carbon offset options and monthly impact reports.
 
-Eco-Impact Dashboard: Real-time carbon footprint tracking for every trip, offering users "eco-points" and gamified achievements for sustainable choices.
+## 3. User Types
+- **Riders**: Individuals and corporate employees seeking eco-friendly transportation.
+- **Drivers**: EV owners and professionals committed to low emission standards.
+- **Corporate Clients**: Organizations requiring sustainability reporting for employee commutes.
+- **Platform Administrators**: Teams managing system performance and environmental metrics.
 
-EV Prioritization: A preference scoring system that gives premium placement and incentives to electric vehicle drivers.
-
-Corporate Commute Coordination: Dedicated tools for recurring ride scheduling and group coordination specifically for corporate employee transportation.
-
-Integrated Green Payments: Transparent pricing that includes carbon offset options and monthly environmental impact reports for users.
-
-User Types
-Riders: Eco-conscious individuals and corporate employees seeking cost-effective, sustainable commuting options.
-
-Drivers: EV owners and professional drivers committed to high vehicle emission standards and environmental responsibility.
-
-Corporate Clients: Organizations requiring detailed sustainability reporting for employee commutes and campus transportation.
-
-Platform Administrators: Operations and analytics teams focused on system performance and environmental metric tracking.
-
-Constraints
-Scalability: The architecture must support 50,000+ concurrent users during peak commuting hours with sub-second GPS updates.
-
-Compliance: Full adherence to GDPR and CCPA for data privacy, and PCI DSS for secure payment processing.
-
-Mobile-First Design: Native iOS and Android applications with offline capability for basic trip tracking during connectivity drops.
-
-Accuracy: Real-time carbon footprint calculations must maintain a margin of error of less than 1%.
+## 4. Constraints
+- **Scalability**: Support 50,000+ concurrent users with sub-second GPS updates.
+- **Compliance**: Adherence to GDPR, CCPA for privacy, and PCI DSS for payments.
+- **Mobile-First Design**: Native iOS/Android apps with offline capability.
+- **Accuracy**: Carbon footprint calculations must have less than 1% margin of error.
