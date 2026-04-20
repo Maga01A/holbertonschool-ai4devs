@@ -1,19 +1,15 @@
-EcoRide Monolithic Architecture
-EcoRide platforması bütün xidmətlərin tək bir tətbiq daxilində idarə olunduğu monolitik arxitektura üzərində qurulmuşdur. Bu yanaşma ilkin mərhələdə inkişafı və yerləşdirməni (deployment) sürətləndirir.
+# EcoRide Monolithic Architecture Description
 
-Ana Komponentlər:
-Frontend Mobile/Web App: İstifadəçilərin (sərnişin və sürücü) sistemlə qarşılıqlı əlaqədə olduğu interfeys.
+The EcoRide platform follows a monolithic architecture where all business logic resides within a single codebase, sharing a unified database and resources.
 
-Auth & User Management: Qeydiyyat, giriş (SSO), profil idarəetməsi və istifadəçi doğrulamasını təmin edir.
+### Component Descriptions:
 
-Eco-Matching Algorithm: Sərnişinləri marşrut və elektrikli avtomobil (EV) üstünlüklərinə əsasən ən uyğun sürücülərlə eşləşdirən əsas məntiq.
-
-Real-time GPS Tracking: Səyahət zamanı həm sürücünün, həm də sərnişinin yerini izləyən və marşrutu optimallaşdıran modul.
-
-Sustainability Analytics: Hər bir gediş üçün karbon emissiyası qənaətini hesablayan və istifadəçi panelində (dashboard) göstərən analiz modulu.
-
-Payment & Green Incentives: Tranzaksiyaları idarə edir və ekoloji təmiz seçimlər üçün bonusları (eco-points) hesablayır.
-
-Notification System: Push bildirişlər, SMS və e-poçt vasitəsilə istifadəçilərə səfər statusu barədə məlumat verir.
-
-Central Database: Bütün sistem məlumatlarının (istifadəçilər, səfərlər, ödənişlər) mərkəzləşdirilmiş şəkildə saxlandığı ACID uyğun bazası.
+* **Frontend Mobile/Web App**: The client-side interface for riders and drivers to interact with the platform.
+* **EcoRide Monolithic Backend**: The central server that processes all requests and coordinates internal modules.
+* **Auth & User Management**: Handles user registration, Single Sign-On (SSO), and session security.
+* **Eco-Matching Algorithm**: The core logic that pairs riders with the most efficient and eco-friendly drivers.
+* **Real-time GPS Tracking**: Manages live location updates and route synchronization during trips.
+* **Sustainability Analytics**: Calculates carbon footprint savings and generates eco-impact reports.
+* **Payment & Green Incentives**: Processes transactions and manages the eco-points reward system.
+* **Notification System**: Sends push notifications and alerts regarding trip status and updates.
+* **Central Database**: A centralized relational database that stores all user, trip, and financial records.
