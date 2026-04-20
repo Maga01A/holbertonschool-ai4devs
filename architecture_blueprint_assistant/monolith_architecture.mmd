@@ -1,0 +1,17 @@
+graph TD
+  User((User Interface)) --> Frontend[Frontend Mobile/Web App]
+  Frontend --> Monolith[EcoRide Monolithic Backend]
+  
+  subgraph "Monolithic Core"
+    Monolith --> Auth[Auth & User Management]
+    Monolith --> Match[Eco-Matching Algorithm]
+    Monolith --> Tracking[Real-time GPS Tracking]
+    Monolith --> Impact[Sustainability Analytics]
+    Monolith --> Pay[Payment & Green Incentives]
+    Monolith --> Notify[Notification System]
+  end
+
+  Auth --> DB[(Central Database)]
+  Match --> DB
+  Impact --> DB
+  Pay --> DB
