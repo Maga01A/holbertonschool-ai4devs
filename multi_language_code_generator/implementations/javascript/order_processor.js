@@ -9,3 +9,5 @@ function processOrder(item, price, quantity) {
 }
 
 console.log(processOrder("Laptop", 1200, 2));
+
+module.exports = { processOrder };
