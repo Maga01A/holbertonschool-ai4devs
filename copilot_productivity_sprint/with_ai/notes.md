@@ -1,8 +1,23 @@
-# AI-Assisted Task Analysis
+## AI Usage Notes
 
-## Task: CSV Data Processor & Paginator
-- **Description**: Same task as baseline, but using GitHub Copilot for code generation and refactoring.
-- **Time Spent**: 15 minutes
-- **Prompts Used**: 
-  1. "Write a Python function to read CSV and filter by category."
-  2. "Add pagination logic using list slicing."
+### Task 1
+**Prompt Used**:
+Write a Python function to sum a list of numbers.
+
+**AI Suggestion**:
+Use built-in sum() function.
+
+**Time Spent**:
+2 minutes
+
+---
+
+### Task 2
+**Prompt Used**:
+Fix a bug in JavaScript average calculation.
+
+**AI Suggestion**:
+Divide by array length instead of length - 1.
+
+**Time Spent**:
+3 minutes
