@@ -40,6 +40,14 @@ Input: A functional code block.
 
 Output: A list of potential edge cases and defensive programming suggestions.
 
+Error Handling Enhancement
+
+Goal: Add robust try-catch blocks and custom error messages.
+
+Input: Basic code without error handling.
+
+Output: Production-ready code with comprehensive error management.
+
 3. Documentation & Knowledge Sharing
 API Documentation Generation
 
@@ -56,6 +64,14 @@ Goal: Explain complex logic in plain language for onboarding.
 Input: Advanced regex or multi-threaded logic.
 
 Output: Line-by-line breakdown using analogies.
+
+README File Generation
+
+Goal: Create a professional overview for a repository.
+
+Input: Project structure and list of features.
+
+Output: Well-structured Markdown file with setup instructions.
 
 4. Testing & Validation
 Unit Test Generation
