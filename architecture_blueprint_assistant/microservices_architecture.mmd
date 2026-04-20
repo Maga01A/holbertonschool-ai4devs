@@ -1,0 +1,22 @@
+﻿graph TD
+  User((User Interface)) --> Gateway[API Gateway]
+
+  subgraph "Core Services"
+    Gateway --> AuthService[Auth & User Service]
+    Gateway --> MatchingService[Ride Matching Service]
+    Gateway --> TrackingService[Live Tracking Service]
+    Gateway --> SustainabilityService[Sustainability Analytics Service]
+    Gateway --> PaymentService[Payment & Rewards Service]
+    Gateway --> NotificationService[Notification Service]
+  end
+
+  subgraph "Data Storage"
+    AuthService --> AuthDB[(Auth DB)]
+    MatchingService --> RideDB[(Ride DB)]
+    TrackingService --> GeoDB[(Geo-Spatial DB)]
+    SustainabilityService --> StatsDB[(Analytics DB)]
+    PaymentService --> PayDB[(Transaction DB)]
+  end
+
+  MatchingService -.-> |Async Events| NotificationService
+  PaymentService -.-> |Async Events| NotificationService
