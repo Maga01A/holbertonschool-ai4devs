@@ -1,0 +1,10 @@
+{
+    "info": {
+        "name": "RentFlow API Collection",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        { "name": "Get All Items", "request": { "method": "GET", "url": "http://localhost:3000/items" } },
+        { "name": "Create Item", "request": { "method": "POST", "url": "http://localhost:3000/items", "body": { "mode": "raw", "raw": "{\"name\": \"Ladder\", \"price\": 12}" } } }
+    ]
+}
