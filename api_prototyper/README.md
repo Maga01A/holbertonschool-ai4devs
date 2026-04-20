@@ -1,5 +1,5 @@
 # RentFlow API Prototype
-A minimal API for managing rental equipment.
+A minimal API for managing rental equipment built with Express.js.
 
 ## Setup
 1. Navigate to directory: cd api_prototyper
