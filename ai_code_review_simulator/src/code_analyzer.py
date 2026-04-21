@@ -1,65 +1,61 @@
 import ast
 import re
+from dataclasses import dataclass, asdict
+from typing import Dict, List, Any
 
-class CodeAnalyzer:
-    """Advanced Code Analysis Engine for AI Review Simulator."""
+@dataclass
+class AnalysisMetrics:
+    complexity: int = 0
+    security_risk: str = "Low"
+    maintainability_score: int = 100
+
+class CodeAnalyzer(ast.NodeVisitor):
+    \"\"\"Advanced Code Analysis Engine with AI-driven optimizations.\"\"\"
     
-    def __init__(self, source_code):
-        self.source_code = source_code
-        self.issues = []
-        self.metrics = {
-            "complexity": 0,
-            "security_risk": "Low",
-            "maintainability_score": 100
-        }
+    # Pre-compiling regex patterns for performance
+    SECURITY_PATTERNS = {
+        "SQL Injection": re.compile(r"(\.execute\(.*f['\"]|.*\.query\(.*['\"] \+)"),
+        "Hardcoded Credential": re.compile(r"(password|api_key|secret)\s*=\s*['\"].*['\"]", re.IGNORECASE),
+        "Insecure Random": re.compile(r"import random")
+    }
 
-    def analyze_complexity(self):
-        """Calculates basic cyclomatic complexity indicators."""
+    def __init__(self, source_code: str):
+        self.source_code = source_code
+        self.issues: List[str] = []
+        self.metrics = AnalysisMetrics()
+
+    def visit_If(self, node): self.metrics.complexity += 1; self.generic_visit(node)
+    def visit_For(self, node): self.metrics.complexity += 1; self.generic_visit(node)
+    def visit_While(self, node): self.metrics.complexity += 1; self.generic_visit(node)
+    def visit_Try(self, node): self.metrics.complexity += 1; self.generic_visit(node)
+
+    def run_analysis(self) -> None:
+        \"\"\"Executes the full suite of analysis.\"\"\"
         try:
             tree = ast.parse(self.source_code)
-            for node in ast.walk(tree):
-                if isinstance(node, (ast.If, ast.For, ast.While, ast.With, ast.Try)):
-                    self.metrics["complexity"] += 1
-            
-            if self.metrics["complexity"] > 10:
+            self.visit(tree)
+            if self.metrics.complexity > 10:
                 self.issues.append("High Cyclomatic Complexity: Consider refactoring.")
-                self.metrics["maintainability_score"] -= 20
+                self.metrics.maintainability_score -= 20
         except SyntaxError:
-            self.issues.append("Syntax Error: Could not parse code for complexity.")
-
-    def check_security(self):
-        """Scans for common security anti-patterns."""
-        patterns = {
-            "SQL Injection": r"(\.execute\(.*f['\"]|.*\.query\(.*['\"] \+)",
-            "Hardcoded Credential": r"(password|api_key|secret)\s*=\s*['\"].*['\"]",
-            "Insecure Random": r"import random"
-        }
+            self.issues.append("Syntax Error: Could not parse code.")
         
-        for bug_type, pattern in patterns.items():
-            if re.search(pattern, self.source_code, re.IGNORECASE):
-                self.issues.append(f"Security Vulnerability Found: {bug_type}")
-                self.metrics["security_risk"] = "High"
-                self.metrics["maintainability_score"] -= 30
+        self._check_security()
 
-    def generate_report(self):
-        """Compiles the final analysis report."""
-        self.analyze_complexity()
-        self.check_security()
-        
+    def _check_security(self) -> None:
+        for bug_type, pattern in self.SECURITY_PATTERNS.items():
+            if pattern.search(self.source_code):
+                msg = f"Security Vulnerability: {bug_type}"
+                if bug_type == "Insecure Random":
+                    msg += " (Use 'secrets' module instead)"
+                self.issues.append(msg)
+                self.metrics.security_risk = "High"
+                self.metrics.maintainability_score -= 30
+
+    def get_report(self) -> Dict[str, Any]:
+        \"\"\"Generates the analysis report dictionary.\"\"\"
         return {
             "status": "Success" if not self.issues else "Needs Improvement",
-            "metrics": self.metrics,
-            "findings": self.issues,
-            "summary": f"Analyzed {len(self.source_code.splitlines())} lines of code."
+            "metrics": asdict(self.metrics),
+            "findings": self.issues
         }
-
-# Example usage function
-def run_simulation():
-    sample = \"\"\"
-def process_data(db, user_input):
-    if user_input:
-        query = "SELECT * FROM users WHERE id = " + user_input
-        return db.execute(query)
-    \"\"\"
-    analyzer = CodeAnalyzer(sample)
-    print(analyzer.generate_report())
