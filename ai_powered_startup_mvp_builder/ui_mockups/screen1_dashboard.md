@@ -1,5 +1,4 @@
 # Screen 1: Home Dashboard
-- **Components**: Google Maps background, floating "Where to?" search bar.
-- **Visuals**: Top-right corner displays a real-time "CO2 Saved Today" counter.
-- **Color Scheme**: White background, Emerald Green primary buttons, Dark Gray text.
-- **Interaction**: Tapping the search bar expands it to full screen for destination entry.
+- **Elementl?r**: X?rit? m?rk?zd?, yuxarida 'Haraya?' axtaris paneli.
+- **Vizuallar**: Sag küncd? real vaxtda karbon q?na?ti saygaci.
+- **R?ngl?r**: Zümrüd yasili (#10b981) v? t?miz ag fon.

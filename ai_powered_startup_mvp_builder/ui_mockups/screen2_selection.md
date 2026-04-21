@@ -1,5 +1,4 @@
 # Screen 2: Ride Selection
-- **Components**: List of available vehicles with icons (EV, Hybrid, Shared).
-- **Visuals**: Sustainability Score (1-10) badge next to each car. Carbon footprint estimate in grams.
-- **Color Scheme**: Selected ride highlighted with a subtle green glow.
-- **Interaction**: Swipe left/right to see more car details (driver rating, vehicle model).
+- **Elementl?r**: N?qliyyat növl?rinin siyahisi (EV, Hybrid, Shared).
+- **Vizuallar**: H?r avtomobilin yaninda 'Sustainability Score' (1-10) nisani.
+- **M?qs?d**: Istifad?çiy? karbon q?na?ti ?n çox olan seçimi göst?rm?k.
