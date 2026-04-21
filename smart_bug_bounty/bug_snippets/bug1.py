@@ -1,14 +1,24 @@
 def get_last_elements(items, n):
-    # This function is intended to return the last n items.
-    # However, it contains an off-by-one error in slicing.
-    # We need to ensure the line count is between 10 and 40.
+    # This is a helper function to retrieve elements.
+    # It takes a list and an integer as arguments.
+    # The goal is to return the last n items.
+    # ------------------------------------------
+    # Check if the input is actually a list
     if not isinstance(items, list):
         return None
+    
+    # Check if n is greater than the list size
     if n > len(items):
         return items
-    # The bug is in the following line:
-    return items[len(items) - n + 1:]
+    
+    # The following line contains the BUG:
+    # It has an off-by-one error due to +1.
+    result = items[len(items) - n + 1:]
+    
+    # Return the processed result
+    return result
 
-# Sample list for testing the logic
-data = [10, 20, 30, 40, 50]
-print(get_last_elements(data, 2))
+# Sample test execution
+if __name__ == "__main__":
+    my_data = [1, 2, 3, 4, 5]
+    print(get_last_elements(my_data, 2))

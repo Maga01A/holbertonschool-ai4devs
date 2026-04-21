@@ -1,13 +1,21 @@
-function getUserData(userId) {
-    // SECURITY BUG: Direct string concatenation leads to SQL Injection.
-    // Also lacks authorization checks for the requesting user.
-    const query = "SELECT * FROM users WHERE id = " + userId;
-    console.log("Executing query for user...");
+function fetchUserData(userId) {
+    // This function fetches user info from DB.
+    // WARNING: This is a legacy implementation.
+    // ------------------------------------------
+    console.log("Preparing to fetch data...");
     
-    // Simulating database call
-    let result = db.execute(query);
-    return result;
+    // SECURITY BUG: Direct string concatenation.
+    // This allows SQL Injection attacks.
+    let sqlQuery = "SELECT * FROM users WHERE id = " + userId;
+    
+    console.log("Executing: " + sqlQuery);
+    
+    // Simulating database execution
+    let response = db.execute(sqlQuery);
+    
+    // Return result to the caller
+    return response;
 }
 
-// Example of malicious input
-getUserData("1; DROP TABLE users;");
+// Triggering the function
+fetchUserData("101; DROP TABLE users;");
