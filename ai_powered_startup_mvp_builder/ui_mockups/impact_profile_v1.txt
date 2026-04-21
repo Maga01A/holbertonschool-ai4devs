@@ -1,0 +1,1 @@
+Description: User Impact Profile. Features: Eco-Points balance, Achievement Badges, and Carbon Savings trend graph.

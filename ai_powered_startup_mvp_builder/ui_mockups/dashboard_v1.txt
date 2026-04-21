@@ -1,0 +1,1 @@
+Description: EcoRide Home Dashboard with map view, sustainability counter, and 'Where to?' search bar. Theme: Emerald Green.
