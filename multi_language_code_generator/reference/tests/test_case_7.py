@@ -5,5 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from recommendation_engine import Product, RecommendationEngine
 
 class TestRecommendation7(unittest.TestCase):
-    def test_case_7(self):
-        self.assertTrue(True) # Bu, her faylin ferqli bir senari yoxlamasi üçün bazadir
+    def test_invalid_id(self): eng=RecommendationEngine([]); self.assertEqual(eng.calculate_similarity('1','2'), 0.0)
+
+if __name__ == '__main__':
+    unittest.main()

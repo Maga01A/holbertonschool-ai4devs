@@ -5,5 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from recommendation_engine import Product, RecommendationEngine
 
 class TestRecommendation8(unittest.TestCase):
-    def test_case_8(self):
-        self.assertTrue(True) # Bu, her faylin ferqli bir senari yoxlamasi üçün bazadir
+    def test_recommendation_logic(self): p1=Product('1','A','T',10,['a']); p2=Product('2','B','T',11,['a']); eng=RecommendationEngine([p1,p2]); recs=eng.get_recommendations(['1'],[]); self.assertEqual(recs[0][0], '2')
+
+if __name__ == '__main__':
+    unittest.main()
