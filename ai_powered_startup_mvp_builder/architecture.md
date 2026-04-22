@@ -1,10 +1,12 @@
 # System Architecture - Smart Task Prioritizer
 
 ## High-Level System Diagram
-The application is designed as a standalone Client-Side Web Application to ensure privacy and low latency.
+The application is a client-side JavaScript application utilizing a local-first data strategy.
+
+
 
 ### Core Components:
-1. **Frontend View**: Built with modern JavaScript/HTML/CSS. It handles the rendering of the Kanban board and user interaction events.
-2. **Priority Calculation Engine**: A logic module that processes the 'Deadline' (Urgency) and 'Effort' (Complexity) data points to determine a priority score.
-3. **Storage Layer (LocalStorage)**: A persistent browser-based database used to store tasks and user settings across sessions.
-4. **Export Service**: A utility that parses the internal JSON state into a structured CSV format for data portability.
+1. **Frontend View**: Handles all UI rendering and user interactions using modern HTML/CSS/JS.
+2. **Priority Engine**: A specialized logic module that weighs 'Urgency' (Deadline) against 'Complexity' (Effort) to generate a numeric Priority Score.
+3. **Storage Layer**: Uses Browser LocalStorage to maintain state without a backend database.
+4. **Export Module**: Facilitates data portability by converting the internal state into CSV format.
