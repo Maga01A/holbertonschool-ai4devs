@@ -1,1 +1,0 @@
-Description: Ride Selection screen. Categories: EV (Sustainability 10/10), Hybrid (8/10), Shared (7/10). Impact metrics included.
