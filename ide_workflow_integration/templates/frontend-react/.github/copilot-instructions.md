@@ -1,4 +1,5 @@
-# Copilot Instructions
-- Use React functional components.
-- Enforce TypeScript for all props.
-- Style using Tailwind CSS utility classes.
+# Copilot Instructions: React Frontend
+- Use React functional components with TypeScript.
+- Prefer Tailwind CSS for styling.
+- Always include descriptive comments for complex hooks.
+- Use 'lucide-react' for all icon generation.
