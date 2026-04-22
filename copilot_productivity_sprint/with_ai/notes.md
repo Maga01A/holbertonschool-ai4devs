@@ -1,17 +1,19 @@
-﻿# AI-Assisted Task Solutions
+# AI Usage Notes - Productivity Sprint
 
-## Overview
-This folder contains solutions to previous tasks, this time generated and optimized using AI (Copilot/Gemini). The goal was to measure productivity gains and accuracy.
+## Tasks Solved
+1. Data Cleaning Script
+2. Automated Unit Tests
+3. API Boilerplate Generation
 
 ## Prompts Used
-1. **Refactoring Task**: "Refactor the following Python function to follow PEP 8 standards and improve time complexity using a dictionary for lookups."
-2. **API Documentation**: "Generate a complete OpenAPI 3.0 specification for a user management system including JWT security and error schemas."
-3. **Unit Testing**: "Write 5 comprehensive Jest integration tests for the following Express.js routes, ensuring 100% path coverage."
+- **Task 1**: "Write a python function using pandas to read a CSV, drop missing values, and calculate sums grouped by category."
+- **Task 2**: "Generate 5 edge-case unit tests for a Python dictionary merging function."
+- **Task 3**: "Create a FastAPI basic structure with three endpoints: GET /items, POST /items, and DELETE /items."
 
 ## Time Spent
-- **Manual Approach (Estimated)**: 120 minutes
-- **AI-Assisted Approach**: 35 minutes
-- **Total Time Saved**: 85 minutes (approx. 70% efficiency gain)
+- **Manual (estimated)**: 120 minutes
+- **With AI (actual)**: 35 minutes
+- **Efficiency Gain**: ~70% reduction in coding time.
 
-## Reflections on AI Usage
-AI significantly reduced the time spent on boilerplate code and documentation. However, manual intervention was crucial for verifying security logic and ensuring the context of the Azerbaijani market (EcoRide specific constraints) was maintained.
+## Reflection
+Copilot was extremely effective at generating boilerplate code and unit tests. Human intervention was mainly required for architectural decisions and verifying edge-case logic.
