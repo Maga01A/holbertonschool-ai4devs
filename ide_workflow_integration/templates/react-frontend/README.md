@@ -1,5 +1,5 @@
-﻿# React AI-Ready Template
+# React AI-Ready Template
 ## Features
-- **AI-Optimized Context**: Includes .github/copilot-instructions.md for better component generation.
-- **Strict Linting**: ESLint + Prettier for AI code consistency.
-- **Component Workflow**: Pre-configured for atomic design patterns.
+- **AI-Optimized Context**: Integrated .github/copilot-instructions.md for context-aware coding.
+- **ESLint + Prettier**: Standardized code formatting for consistent AI outputs.
+- **Tailwind CSS**: Pre-configured for rapid AI-driven UI generation.

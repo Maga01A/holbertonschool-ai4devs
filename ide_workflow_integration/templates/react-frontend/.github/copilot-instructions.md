@@ -1,5 +1,5 @@
-﻿# Copilot Instructions for React
+# Copilot Instructions: React Frontend
 - Use Functional Components and Hooks.
-- Always implement Tailwind CSS for styling.
-- Ensure WCAG 2.1 accessibility standards in generated JSX.
-- Follow the "Atomic Design" folder structure.
+- Always implement TypeScript interfaces for props.
+- Prefer Tailwind CSS utility classes.
+- Ensure 508 accessibility compliance in generated HTML.
