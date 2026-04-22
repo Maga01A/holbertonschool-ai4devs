@@ -1,10 +1,13 @@
-{
-    "info": {
-        "name": "RentFlow API Collection",
-        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-    },
-    "item": [
-        { "name": "Get All Items", "request": { "method": "GET", "url": "http://localhost:3000/items" } },
-        { "name": "Create Item", "request": { "method": "POST", "url": "http://localhost:3000/items", "body": { "mode": "raw", "raw": "{\"name\": \"Ladder\", \"price\": 12}" } } }
-    ]
+﻿{
+  "info": {
+    "name": "EcoRide API Complete Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    { "name": "List Users", "request": { "method": "GET", "url": "http://localhost:3000/users" } },
+    { "name": "Create User", "request": { "method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\"username\": \"test_user\"}" }, "url": "http://localhost:3000/users" } },
+    { "name": "Get User", "request": { "method": "GET", "url": "http://localhost:3000/users/1" } },
+    { "name": "Update User", "request": { "method": "PUT", "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\"username\": \"updated\"}" }, "url": "http://localhost:3000/users/1" } },
+    { "name": "Delete User", "request": { "method": "DELETE", "url": "http://localhost:3000/users/1" } }
+  ]
 }
