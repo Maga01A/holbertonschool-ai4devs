@@ -1,19 +1,19 @@
 # AI Usage Notes - Productivity Sprint
 
-## Tasks Solved
-- Refactored legacy data processing script.
-- Generated unit test suite for the calculation module.
-- Automated documentation for existing API endpoints.
+## Tasks Solved with AI
+- **Data Aggregation**: Refactored manual loops into optimized Pandas operations.
+- **Unit Testing**: Generated comprehensive test cases for edge cases (empty files, missing columns).
+- **Documentation**: Auto-generated docstrings using Copilot for all functions.
 
 ## Prompts Used
-1. "Refactor this Python function to be more PEP 8 compliant and optimize the loop structure."
-2. "Create 5 unit tests using pytest for a function that calculates percentage gains, including edge cases for zero division."
-3. "Generate a Markdown summary explaining the following code logic for a technical README."
+1. "Write a Python function using pandas to group a dataframe by user_id and calculate the sum of session_duration."
+2. "Generate 5 pytest cases for the aggregate_user_data function, including a test for FileNotFoundError."
+3. "Refactor the existing nested loops in processing.py into a list comprehension for better performance."
 
-## Time Spent
-- **Manual Implementation (Estimated)**: 150 minutes
-- **With Copilot/AI (Actual)**: 40 minutes
-- **Efficiency Increase**: 73.3%
+## Time Spent Analysis
+- **Manual Implementation Time (Estimated)**: 90 minutes
+- **With Copilot/AI Implementation Time (Actual)**: 25 minutes
+- **Efficiency Gain**: ~72% faster development.
 
 ## Reflection
-AI significantly reduced the 'blank page' syndrome. The most time-consuming part shifted from writing syntax to reviewing and verifying the logic provided by the AI.
+Copilot was exceptionally fast at generating boilerplate code and transforming complex loops. The main challenge was ensuring that the AI-generated Pandas syntax matched the specific version installed in our environment.
