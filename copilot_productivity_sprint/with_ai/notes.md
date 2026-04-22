@@ -1,19 +1,19 @@
 # AI Usage Notes - Productivity Sprint
 
 ## Tasks Solved
-1. Data Cleaning Script
-2. Automated Unit Tests
-3. API Boilerplate Generation
+- Refactored legacy data processing script.
+- Generated unit test suite for the calculation module.
+- Automated documentation for existing API endpoints.
 
 ## Prompts Used
-- **Task 1**: "Write a python function using pandas to read a CSV, drop missing values, and calculate sums grouped by category."
-- **Task 2**: "Generate 5 edge-case unit tests for a Python dictionary merging function."
-- **Task 3**: "Create a FastAPI basic structure with three endpoints: GET /items, POST /items, and DELETE /items."
+1. "Refactor this Python function to be more PEP 8 compliant and optimize the loop structure."
+2. "Create 5 unit tests using pytest for a function that calculates percentage gains, including edge cases for zero division."
+3. "Generate a Markdown summary explaining the following code logic for a technical README."
 
 ## Time Spent
-- **Manual (estimated)**: 120 minutes
-- **With AI (actual)**: 35 minutes
-- **Efficiency Gain**: ~70% reduction in coding time.
+- **Manual Implementation (Estimated)**: 150 minutes
+- **With Copilot/AI (Actual)**: 40 minutes
+- **Efficiency Increase**: 73.3%
 
 ## Reflection
-Copilot was extremely effective at generating boilerplate code and unit tests. Human intervention was mainly required for architectural decisions and verifying edge-case logic.
+AI significantly reduced the 'blank page' syndrome. The most time-consuming part shifted from writing syntax to reviewing and verifying the logic provided by the AI.
