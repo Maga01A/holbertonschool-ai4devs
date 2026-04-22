@@ -1,26 +1,25 @@
 # Data Model - EcoRide MVP
 
-## 1. User Entity
-Istifad?�i profill?rini v? eko-xallari idar? edir.
-- id: UUID (PK)
+## Entity 1: User
+İstifadəçi profillərini və eko-xalları idarə edir.
+- id: UUID (Primary Key)
 - username: String
 - email: String (Unique)
 - user_type: Enum (RIDER, DRIVER, ADMIN)
 - eco_points_balance: Integer
 
-## 2. Vehicle Entity
-N?qliyyat vasit?l?rinin texniki v? emissiya m?lumatlari.
-- id: UUID (PK)
-- owner_id: UUID (FK -> User.id)
+## Entity 2: Vehicle
+Nəqliyyat vasitələrinin texniki və emissiya məlumatları.
+- id: UUID (Primary Key)
+- owner_id: UUID (Foreign Key -> User.id)
 - model_name: String
-- ehicle_type: Enum (EV, HYBRID, CONVENTIONAL)
+- vehicle_type: Enum (EV, HYBRID, CONVENTIONAL)
 - emission_rate: Float (CO2 grams per km)
 
-## 3. RideSession Entity
-H?r bir s?f?rin detallari v? ekoloji t?siri.
-- id: UUID (PK)
-- ider_id: UUID (FK -> User.id)
-- driver_id: UUID (FK -> User.id)
+## Entity 3: RideSession
+Hər bir səfərin detalları və ekoloji təsiri.
+- id: UUID (Primary Key)
+- rider_id: UUID (Foreign Key -> User.id)
+- driver_id: UUID (Foreign Key -> User.id)
 - distance_km: Float
-- carbon_saved: Float (Calculated by AI engine)
-- 	imestamp: DateTime
+- carbon_saved: Float (Calculated amount)

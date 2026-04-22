@@ -1,15 +1,23 @@
-# User Stories - EcoRide Hackathon
+## User Story 1
+As a user, I want to add a task with a title and deadline so that I can keep track of my upcoming work.
 
-## Rider Perspective
-1. **Sustainable Matching**: Bir s?rnisin kimi, m?n baslangic v? t?yinati daxil etdikd? sistemin m?n? ?n asagi karbon emissiyali marsrutu t?klif etm?sini ist?yir?m.
-2. **Carbon Tracker**: Bir istifad?çi kimi, h?r gedisin sonunda n? q?d?r CO2 q?na?t etdiyimi görm?k ist?yir?m ki, ekoloji t?sirimi anlayim.
-3. **Shared Rides**: Bir s?rnisin kimi, eyni istiqam?t? ged?n dig?r s?xsl?rl? eyni masini paylasmaq ist?yir?m ki, h?m x?rcl?rim, h?m d? s?h?r n?qliyyatindaki yük azalsin.
-4. **Eco-Points Rewards**: Bir istifad?çi kimi, etdiyim "yasil" s?f?rl?r qarsiliginda eko-xallar toplamaq v? onlari növb?ti gedisl?rd? endirim kimi istifad? etm?k ist?yir?m.
+## User Story 2
+As a user, I want to assign an effort level to each task so that the system understands the complexity.
 
-## Driver Perspective
-5. **EV Registration**: Bir elektrikli avtomobil sahibi kimi, avtomobilimin tipini v? batareya m?lumatlarini qeydiyyatdan keçirm?k ist?yir?m ki, sistem m?ni EV sürücüsü kimi tanisin.
-6. **Smart Route Navigation**: Bir sürücü kimi, AI t?r?find?n optimallasdirilmis, ?n az tixac v? ?n az enerji s?rfiyyati olan marsrutla t?min olunmaq ist?yir?m.
+## User Story 3
+As a user, I want the system to calculate a priority score so that I can see which tasks are critical.
 
-## Admin & Corporate Perspective
-7. **Fleet Impact Dashboard**: Bir admin kimi, platformadaki bütün aktiv avtomobill?rin c?mi karbon q?na?tini izl?m?k üçün real-time statistikalari görm?k ist?yir?m.
-8. **User Verification**: Bir moderator kimi, sürücül?rin t?qdim etdiyi emissiya sertifikatlarini yoxlayib t?sdiql?m?k ist?yir?m.
+## User Story 4
+As a user, I want to view my tasks on a Kanban board so that I can easily see my workflow.
+
+## User Story 5
+As a user, I want to drag and drop tasks between columns so that I can update their status quickly.
+
+## User Story 6
+As a user, I want to edit an existing task's details so that I can update information when plans change.
+
+## User Story 7
+As a user, I want to delete a task from the list so that I can remove items that are no longer relevant.
+
+## User Story 8
+As a user, I want to export my task list as a CSV file so that I can keep an offline backup.
