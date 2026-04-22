@@ -1,5 +1,5 @@
-﻿# Node.js Backend AI-Ready Template
+# Node.js Backend AI-Ready Template
 ## Features
-- **Security-First AI**: Configured to prevent hardcoded secrets.
-- **OpenAPI/Swagger**: Automated API documentation workflow.
-- **Modular Architecture**: Controller-Service-Repository pattern.
+- **Express.js + TypeScript**: Strongly typed for better AI logic inference.
+- **AI Documentation**: Pre-configured OpenAPI/Swagger generation.
+- **Global Error Handling**: Standardized patterns for AI to follow.
