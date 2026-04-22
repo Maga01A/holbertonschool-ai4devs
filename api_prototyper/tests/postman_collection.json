@@ -1,10 +1,28 @@
 ﻿{
-  "info": { "name": "Full API Collection", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json" },
+  "info": {
+    "name": "EcoRide & RentFlow Full CRUD API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
   "item": [
-    { "name": "Users List", "request": { "method": "GET", "url": "http://localhost:3000/users" } },
-    { "name": "Users Create", "request": { "method": "POST", "body": {"mode": "raw", "raw": "{}"}, "url": "http://localhost:3000/users" } },
-    { "name": "Items List", "request": { "method": "GET", "url": "http://localhost:3000/items" } },
-    { "name": "Items Create", "request": { "method": "POST", "body": {"mode": "raw", "raw": "{}"}, "url": "http://localhost:3000/items" } },
-    { "name": "Delete Item", "request": { "method": "DELETE", "url": "http://localhost:3000/items/1" } }
+    {
+      "name": "Users",
+      "item": [
+        { "name": "List Users", "request": { "method": "GET", "url": "http://localhost:3000/users" } },
+        { "name": "Create User", "request": { "method": "POST", "body": {"mode": "raw", "raw": "{\"username\": \"test\"}"}, "url": "http://localhost:3000/users" } },
+        { "name": "Get User By ID", "request": { "method": "GET", "url": "http://localhost:3000/users/1" } },
+        { "name": "Update User", "request": { "method": "PUT", "body": {"mode": "raw", "raw": "{\"username\": \"updated\"}"}, "url": "http://localhost:3000/users/1" } },
+        { "name": "Delete User", "request": { "method": "DELETE", "url": "http://localhost:3000/users/1" } }
+      ]
+    },
+    {
+      "name": "Items",
+      "item": [
+        { "name": "List Items", "request": { "method": "GET", "url": "http://localhost:3000/items" } },
+        { "name": "Create Item", "request": { "method": "POST", "body": {"mode": "raw", "raw": "{\"name\": \"drill\"}"}, "url": "http://localhost:3000/items" } },
+        { "name": "Get Item By ID", "request": { "method": "GET", "url": "http://localhost:3000/items/1" } },
+        { "name": "Update Item", "request": { "method": "PUT", "body": {"mode": "raw", "raw": "{\"name\": \"saw\"}"}, "url": "http://localhost:3000/items/1" } },
+        { "name": "Delete Item", "request": { "method": "DELETE", "url": "http://localhost:3000/items/1" } }
+      ]
+    }
   ]
 }
