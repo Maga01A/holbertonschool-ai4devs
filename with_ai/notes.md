@@ -1,16 +1,17 @@
-# AI-Assisted Task Analysis (With Copilot)
+﻿# AI-Assisted Task Solutions
 
-## Task 1: JSON Data Validator
-- **Description**: Re-implementing the Python validator using GitHub Copilot.
-- **Prompts Used**: 
-    1. "Write a robust Python function to validate user records from JSON with email regex and age >= 18."
-    2. "Optimize the regex for standard RFC 5322 compliance."
-- **Time Spent**: 8 minutes (Manual was 35 mins)
-- **AI Impact**: Copilot suggested a much more comprehensive regex and used list comprehension for brevity.
+## Overview
+This folder contains solutions to previous tasks, this time generated and optimized using AI (Copilot/Gemini). The goal was to measure productivity gains and accuracy.
 
-## Task 2: String Formatter Utility
-- **Description**: Re-implementing the camelCase to snake_case converter in JS.
-- **Prompts Used**: 
-    1. "Create a JavaScript function to recursively convert object keys from camelCase to snake_case."
-- **Time Spent**: 5 minutes (Manual was 25 mins)
-- **AI Impact**: Copilot handled the recursion logic perfectly on the first try, including edge cases like arrays.
+## Prompts Used
+1. **Refactoring Task**: "Refactor the following Python function to follow PEP 8 standards and improve time complexity using a dictionary for lookups."
+2. **API Documentation**: "Generate a complete OpenAPI 3.0 specification for a user management system including JWT security and error schemas."
+3. **Unit Testing**: "Write 5 comprehensive Jest integration tests for the following Express.js routes, ensuring 100% path coverage."
+
+## Time Spent
+- **Manual Approach (Estimated)**: 120 minutes
+- **AI-Assisted Approach**: 35 minutes
+- **Total Time Saved**: 85 minutes (approx. 70% efficiency gain)
+
+## Reflections on AI Usage
+AI significantly reduced the time spent on boilerplate code and documentation. However, manual intervention was crucial for verifying business logic and ensuring the context of the project was maintained.
