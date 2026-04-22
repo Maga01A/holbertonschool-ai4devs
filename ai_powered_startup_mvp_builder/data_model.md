@@ -1,25 +1,33 @@
 # Data Model - Smart Task Prioritizer
 
-## Entity 1: Task
-| Attribute | Type | Description |
-| :--- | :--- | :--- |
-| id | String (UUID) | Unique identifier for the task |
-| title | String | Name of the task |
-| deadline | Date | Due date of the task |
-| effort | Integer (1-5) | Estimated work required |
-| priorityScore | Float | Calculated score for sorting |
-| status | Enum | 'todo', 'doing', or 'done' |
+Bu bölmədə tətbiqin MVP versiyası üçün istifadə olunan əsas verilənlər strukturu təsvir edilmişdir.
 
-## Entity 2: Category
-| Attribute | Type | Description |
-| :--- | :--- | :--- |
-| id | String | Unique identifier |
-| name | String | Category name (e.g., Work, Study) |
-| colorCode | String | Hex color for UI labels |
+## Entity 1: Task (Tapşırıq)
+Tapşırıqların əsas xüsusiyyətlərini və prioritet dərəcəsini saxlayır.
 
-## Entity 3: UserSettings
 | Attribute | Type | Description |
 | :--- | :--- | :--- |
-| id | String | Unique identifier |
-| theme | String | 'light' or 'dark' mode |
-| taskLimit | Integer | Default limit of active tasks |
+| id | UUID | Tapşırıq üçün unikal identifikasiya kodu |
+| title | String | Tapşırığın adı/başlığı |
+| deadline | Date | Tapşırığın son icra tarixi |
+| effort | Integer | Sərf olunacaq zəhmət (1-5 arası) |
+| priorityScore | Float | Alqoritm tərəfindən hesablanmış vaciblik balı |
+| status | Enum | 'todo', 'doing' və ya 'done' |
+
+## Entity 2: Category (Kateqoriya)
+Tapşırıqları qruplaşdırmaq üçün istifadə olunur.
+
+| Attribute | Type | Description |
+| :--- | :--- | :--- |
+| id | UUID | Kateqoriya üçün unikal kod |
+| name | String | Kateqoriya adı (məs: İş, Şəxsi, Təhsil) |
+| colorCode | String | UI-da görünəcək rəng kodu (Hex formatında) |
+
+## Entity 3: UserSettings (İstifadəçi Ayarları)
+İstifadəçinin tətbiq daxilindəki fərdi seçimlərini saxlayır.
+
+| Attribute | Type | Description |
+| :--- | :--- | :--- |
+| id | UUID | Ayarlar üçün unikal kod |
+| theme | String | 'light' (açıq) və ya 'dark' (tünd) rejim seçimi |
+| taskLimit | Integer | Aktiv saxlanıla biləcək maksimum tapşırıq sayı |

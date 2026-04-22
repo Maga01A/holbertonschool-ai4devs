@@ -1,9 +1,14 @@
 # System Architecture - Smart Task Prioritizer
 
-## High-Level Diagram Description
-Sistem "Client-Side Only" arxitekturas?na ?saslan?r, ??nki MVP m?rh?l?sind? server v? veril?nl?r bazas? (database) m?hdudiyy?ti qoyulub.
+Bu sənəd Smart Task Prioritizer tətbiqinin MVP mərhələsi üçün nəzərdə tutulmuş yüksək səviyyəli arxitekturasını təsvir edir.
 
-1. **Frontend Layer (UI)**: ?stifad??i interfeysi (HTML/JS) vasit?sil? tap??r?qlar?n daxil edilm?si v? Kanban l?vh?sinin g?st?rilm?sini t?min edir.
-2. **Priority Engine (Business Logic)**: Daxil edil?n son tarix (deadline) v? z?hm?t (effort) ?sas?nda riyazi alqoritm vasit?sil? "Priority Score" hesablay?r.
-3. **Storage Layer (Local Persistence)**: M?lumatlar? brauzerin LocalStorage-ind? JSON format?nda saxlay?r.
-4. **Export Module**: M?vcud JSON datas?n? CSV format?na ?evir?r?k y?kl?m?y? imkan verir.
+## High-Level System Diagram
+Tətbiqin komponentləri arasındakı qarşılıqlı əlaqə aşağıdakı diaqramda göstərilmişdir:
+
+```mermaid
+graph TD
+    User((İstifadəçi)) -->|Daxil olur| UI[Frontend Layer: HTML/JS/CSS]
+    UI -->|Məlumat göndərir| Engine[Priority Engine: JS Məntiqi]
+    Engine -->|Hesablayır| Score[Priority Scoring Algorithm]
+    UI -->|Yadda saxlayır/Yükləyir| Storage[Storage Layer: Browser LocalStorage]
+    UI -->|Fayl yaradır| Export[Export Module: CSV Generator]

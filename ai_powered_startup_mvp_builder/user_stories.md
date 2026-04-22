@@ -1,31 +1,12 @@
-# User Stories - Smart Task Prioritizer
+﻿## User Stories - Smart Task Prioritizer
 
-## User Story 1
-As a user, I want to add a task with a title and deadline so that I can keep track of my upcoming work.
-
-## User Story 2
-As a user, I want to assign an effort level (1-5) to each task so that the system understands the complexity.
-
-## User Story 3
-As a user, I want the system to automatically calculate a priority score so that I can see which tasks are most critical.
-
-## User Story 4
-As a user, I want to view my tasks on a visual Kanban board so that I can easily see my workflow.
-
-## User Story 5
-As a user, I want to drag and drop tasks between columns (To Do, Doing, Done) so that I can update their status quickly.
-
-## User Story 6
-As a user, I want to edit an existing task's details so that I can update information when plans change.
-
-## User Story 7
-As a user, I want to delete a task from the list so that I can remove items that are no longer relevant.
-
-## User Story 8
-As a user, I want to export my task list as a CSV file so that I can share it or keep an offline backup.
-
-## User Story 9
-As a user, I want my tasks to be saved in my browser's local storage so that I don't lose data upon refreshing the page.
-
-## User Story 10
-As a user, I want to filter tasks by priority level (High, Medium, Low) so that I can focus on the most important work first.
+1. **As a user**, I want to add a task with a title and deadline so that I can keep track of my upcoming work.
+2. **As a user**, I want the system to calculate a priority score so that I know which task to focus on first.
+3. **As a freelancer**, I want to assign effort levels (1-5) to tasks so that I can manage my daily workload effectively.
+4. **As a user**, I want to see my tasks in a Kanban board so that I can visualize my progress from 'To Do' to 'Done'.
+5. **As a project manager**, I want to export my task list to CSV so that I can share it with my team during meetings.
+6. **As a student**, I want to categorize tasks (e.g., Study, Personal) so that I can separate different areas of my life.
+7. **As a user**, I want my data to be saved in the browser so that I don't lose my tasks when I refresh the page.
+8. **As a user**, I want to delete completed tasks so that I can keep my workspace clean.
+9. **As a power user**, I want to toggle between light and dark themes so that I can work comfortably in different lighting.
+10. **As a user**, I want to see a warning when I reach the 50-task limit so that the application performance remains stable.
