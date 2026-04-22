@@ -4,8 +4,8 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from recommendation_engine import Product, RecommendationEngine
 
-class TestRecommendation7(unittest.TestCase):
-    def test_invalid_id(self): eng=RecommendationEngine([]); self.assertEqual(eng.calculate_similarity('1','2'), 0.0)
+class TestScenario7(unittest.TestCase):
+    def test_missing_id_return(self): eng=RecommendationEngine([]); self.assertEqual(eng.calculate_similarity('1','x'), 0.0)
 
 if __name__ == '__main__':
     unittest.main()
