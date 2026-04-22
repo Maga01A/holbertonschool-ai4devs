@@ -1,14 +1,12 @@
 # System Architecture - Smart Task Prioritizer
 
-Bu sənəd Smart Task Prioritizer tətbiqinin MVP mərhələsi üçün nəzərdə tutulmuş yüksək səviyyəli arxitekturasını təsvir edir.
-
 ## High-Level System Diagram
-Tətbiqin komponentləri arasındakı qarşılıqlı əlaqə aşağıdakı diaqramda göstərilmişdir:
+The application follows a client-side architecture optimized for speed and privacy.
 
-```mermaid
-graph TD
-    User((İstifadəçi)) -->|Daxil olur| UI[Frontend Layer: HTML/JS/CSS]
-    UI -->|Məlumat göndərir| Engine[Priority Engine: JS Məntiqi]
-    Engine -->|Hesablayır| Score[Priority Scoring Algorithm]
-    UI -->|Yadda saxlayır/Yükləyir| Storage[Storage Layer: Browser LocalStorage]
-    UI -->|Fayl yaradır| Export[Export Module: CSV Generator]
+
+
+### Components:
+1. **Frontend Layer (UI)**: Built with HTML5, CSS3, and JavaScript. Handles user input and visualizes the Kanban board.
+2. **Priority Engine**: A core JavaScript module that takes 'Deadline' and 'Effort' as inputs and applies a weighted algorithm to calculate a Priority Score.
+3. **Data Storage (LocalStorage)**: Browser-based persistent storage to keep user data secure and available offline.
+4. **Export Module**: Converts JSON task data into a downloadable CSV format.

@@ -1,12 +1,31 @@
-﻿# User Stories - Smart Task Prioritizer
+# User Stories - Smart Task Prioritizer
 
-1. **As a user**, I want to add a task with a title and deadline so that I can keep track of my upcoming work.
-2. **As a user**, I want the system to calculate a priority score so that I know which task to focus on first.
-3. **As a freelancer**, I want to assign effort levels (1-5) to tasks so that I can manage my daily workload effectively.
-4. **As a user**, I want to see my tasks in a visual Kanban board so that I can track progress easily.
-5. **As a project manager**, I want to export my task list to CSV so that I can share it with my team.
-6. **As a student**, I want to categorize tasks so that I can separate different areas of my life.
-7. **As a user**, I want my data to be saved in the browser so that I don't lose tasks on refresh.
-8. **As a user**, I want to delete tasks so that I can maintain a clean workspace.
-9. **As a power user**, I want to toggle dark mode so that I can work comfortably at night.
-10. **As a user**, I want to see a task limit warning so that the app remains fast and responsive.
+## User Story 1
+As a user, I want to add a new task with a title and deadline so that I can keep track of my upcoming work.
+
+## User Story 2
+As a user, I want to assign an effort level (1-5) to each task so that the system can calculate its complexity.
+
+## User Story 3
+As a busy professional, I want the system to automatically rank my tasks by priority so that I know exactly what to work on first.
+
+## User Story 4
+As a user, I want to categorize my tasks (Work, Personal, Urgent) so that I can filter my view based on my current context.
+
+## User Story 5
+As a visual learner, I want to see my tasks in a Kanban board (To Do, Doing, Done) so that I can visualize my progress.
+
+## User Story 6
+As a user, I want to edit or delete existing tasks so that I can keep my list updated as plans change.
+
+## User Story 7
+As a user, I want to toggle between Light and Dark mode so that I can use the app comfortably at any time of day.
+
+## User Story 8
+As a goal-oriented user, I want to see a summary of completed tasks today so that I feel motivated by my productivity.
+
+## User Story 9
+As a user, I want my tasks to be saved locally in the browser so that I don't lose my data when I refresh the page.
+
+## User Story 10
+As a power user, I want to export my prioritized task list to a CSV file so that I can share it or use it in other tools.
