@@ -1,36 +1,48 @@
 ﻿# EcoRide Data Model Documentation
 
-This data model is designed to support a scalable, eco-friendly ride-sharing ecosystem. It emphasizes the separation of user roles and the tracking of environmental impact.
+This data model is designed to support a scalable, eco-friendly ride-sharing ecosystem. Each entity represents a core component of the microservices architecture.
 
 ## Entities and Attributes
 
 ### 1. User
-Represents the passenger using the service.
-- **id**: Unique identifier (UUID).
-- **name**: Full name of the user.
-- **email**: Contact and login information.
-- **loyalty_points**: Accumulated "Eco-Points" for green travel.
+Represents the rider/passenger who requests transportation.
+- **user_id**: Unique identifier (Primary Key).
+- **full_name**: The user's legal name.
+- **email**: Unique email address for authentication.
+- **loyalty_points**: Accumulated points for using green transport.
 
-### 2. Driver & Vehicle
-Represents the service providers and their electric vehicles.
-- **driver_id**: Unique identifier for the professional driver.
-- **vehicle_id**: Reference to the specific EV used.
-- **status**: Availability and current battery level (telemetry data).
+### 2. Driver
+Represents the service provider operating the electric vehicle.
+- **driver_id**: Unique identifier (Primary Key).
+- **license_number**: Driver's professional license details.
+- **rating**: Average user feedback score.
 
-### 3. Ride
-The central entity connecting users, drivers, and trips.
-- **id**: Unique ride identifier.
-- **rider_id/driver_id**: Foreign keys to the respective users.
-- **status**: Enum (REQUESTED, ON_TRIP, COMPLETED, CANCELLED).
-- **timestamps**: Tracking duration and response times.
+### 3. Vehicle
+Represents the specific electric vehicle (EV) used in the fleet.
+- **vehicle_id**: Unique identifier for the vehicle.
+- **model**: The EV model and year.
+- **battery_level**: Real-time telemetry data of the vehicle's charge.
+- **status**: Current availability (Available, Maintenance, In-Use).
 
-### 4. Payment
-Financial records for each completed trip.
-- **id**: Unique transaction identifier.
-- **ride_id**: Reference to the specific trip.
-- **amount**: Total cost calculated based on distance and vehicle type.
+### 4. Ride
+The central transactional entity connecting riders and drivers.
+- **ride_id**: Unique trip identifier (Primary Key).
+- **rider_id**: Foreign Key reference to the User.
+- **driver_id**: Foreign Key reference to the Driver.
+- **vehicle_id**: Foreign Key reference to the Vehicle used.
+- **status**: Current state (PENDING, ACTIVE, COMPLETED, CANCELLED).
+- **created_at**: Timestamp of the ride request.
 
-### 5. Eco Impact
-Specific metrics for sustainability tracking.
-- **co2_saved_kg**: Amount of carbon dioxide prevented compared to a standard ICE vehicle.
-- **impact_score**: Contribution to the city's overall green metrics.
+### 5. Payment
+Handles the financial transaction associated with a completed ride.
+- **payment_id**: Unique transaction identifier.
+- **ride_id**: Foreign Key reference to the Ride.
+- **amount**: Final fare calculated for the trip.
+- **status**: State of the payment (PENDING, PAID, REFUNDED).
+
+### 6. Eco Impact
+Tracks the environmental contribution of every trip.
+- **impact_id**: Unique record identifier.
+- **ride_id**: Foreign Key reference to the Ride.
+- **co2_saved_kg**: Amount of CO2 prevented by using an EV.
+- **distance_km**: Total distance traveled during the session.

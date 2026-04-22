@@ -16,6 +16,12 @@
         string license_number
         string rating
     }
+    VEHICLE {
+        string vehicle_id PK
+        string model
+        int battery_level
+        string status
+    }
     RIDE {
         string ride_id PK
         string rider_id FK
