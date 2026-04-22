@@ -1,23 +1,16 @@
 # UI Prompt Log - Smart Task Prioritizer
 
-## Screen 1: Kanban Dashboard
-- **AI Tool**: Midjourney v6
-- **Prompt**: /imagine prompt: Modern web application UI mockup for a Kanban Dashboard named 'Smart Task Prioritizer'. It features three columns: To Do (Red tags), In Progress (Yellow tags), and Done (Green tags). Dark mode theme, sleek typography, minimalist icons, data visualization charts showing completion rates. High resolution, professional design. --ar 16:9
-- **Screenshot**: ui_mockups/dashboard.png
-- **Revision**: Prompts needs to emphasize priority color-coding (Red for High, Green for Low) clearly.
+## Iteration 1: Main Dashboard
+- **Prompt**: "Generate a high-fidelity web UI mockup for a Kanban dashboard with three columns: To-Do, In Progress, and Completed. Use a modern dark theme with emerald green accents."
+- **Screenshot**: ui_mockups/screen1_dashboard.png
+- **Revision**: The contrast between columns was too low. Added distinct border shadows.
 
----
+## Iteration 2: Task Entry Modal
+- **Prompt**: "Create a minimalist mobile-friendly modal for adding new tasks. Include fields for title, due date, and a priority slider from 1-5."
+- **Screenshot**: ui_mockups/screen2_entry.png
+- **Revision**: Increased the size of the 'Add Task' button for better thumb accessibility.
 
-## Screen 2: Task Entry Form
-- **AI Tool**: Midjourney v6
-- **Prompt**: /imagine prompt: Mobile UI mockup for a 'Task Entry' screen. Features a simple form with input fields for Task Title, Deadline (date picker), and Effort level (slider from 1 to 5). Elegant glassmorphism design with a soft green 'Add Task' button at the bottom. Clean white background. --ar 9:16
-- **Screenshot**: ui_mockups/task-entry.png
-- **Revision**: Glassmorphism is too heavy; reduce the blur effect for better readability on mobile.
-
----
-
-## Screen 3: Settings Screen
-- **AI Tool**: DALL-E 3
-- **Prompt**: A modern dashboard UI mockup showing user settings. Include options for profile management, theme selection (light/dark), and notification toggles. Minimalist flat design with vibrant blue accent colors. Professional slate-grey background.
-- **Screenshot**: ui_mockups/settings.png
-- **Revision**: None needed; initial generation meets MVP requirements.
+## Iteration 3: Analytics View
+- **Prompt**: "Display a productivity analytics screen with a circular progress bar showing tasks completed today and a bar chart for weekly trends."
+- **Screenshot**: ui_mockups/screen3_analytics.png
+- **Revision**: Changed the bar chart colors to match the priority levels (Red, Yellow, Blue).
