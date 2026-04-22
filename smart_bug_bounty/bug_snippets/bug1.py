@@ -1,25 +1,21 @@
-import datetime
+import time
 
-def log_operation(operation_name):
-    # Helper log function
-    print(f"[{datetime.datetime.now()}] Executing: {operation_name}")
+def log_cart(cart):
+    # Helper to print cart size
+    print(f"Current cart size: {len(cart)}")
 
-def get_last_elements(items, n):
+def add_item_to_cart(item, cart=[]):
     """
-    Returns the last n elements of the provided list.
-    Includes type checking to prevent system crashes.
+    Adds an item to the shopping cart.
+    Intended Behavior: Create a fresh cart for each new user if one is not provided.
     """
-    log_operation("get_last_elements")
-    
-    if not isinstance(items, list):
-        return None
-    if n > len(items):
-        return items
-        
-    # BUG: off-by-one error (+1 skips the first intended element)
-    result = items[len(items) - n + 1:]
-    return result
+    print(f"Adding '{item}' to cart...")
+    # BUG: Mutable default argument causes data to persist across calls
+    cart.append(item)
+    log_cart(cart)
+    return cart
 
 if __name__ == "__main__":
-    my_data = [10, 20, 30, 40, 50]
-    print("Result:", get_last_elements(my_data, 3))
+    user1 = add_item_to_cart("Apple")
+    user2 = add_item_to_cart("Banana")
+    # user2 cart will unexpectedly contain 'Apple' as well
