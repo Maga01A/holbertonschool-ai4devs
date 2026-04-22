@@ -14,7 +14,7 @@ func processTasks() {
     
     for _, t := range tasks {
         wg.Add(1)
-        // BUG: capturing loop variable 't' by reference in a goroutine
+        // BUG: capturing loop variable 't' by reference
         go func() {
             defer wg.Done()
             time.Sleep(10 * time.Millisecond)

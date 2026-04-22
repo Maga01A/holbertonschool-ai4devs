@@ -5,13 +5,13 @@ def log_cart(cart):
     print(f"Current cart size: {len(cart)}")
 
 def add_item_to_cart(item, cart=[]):
-    """
-    Adds an item to the shopping cart.
-    Intended Behavior: Create a fresh cart for each new user if one is not provided.
-    """
+    # Adds an item to the shopping cart.
+    # Intended Behavior: Create a fresh cart for each new user.
     print(f"Adding '{item}' to cart...")
-    # BUG: Mutable default argument causes data to persist across calls
+    
+    # BUG: Mutable default argument causes data to persist
     cart.append(item)
+    
     log_cart(cart)
     return cart
 

@@ -13,7 +13,6 @@ public class Auth {
         }
         
         // BUG: Uses == instead of .equals() for String value comparison
-        // This compares memory addresses instead of the actual text
         boolean isValid = (token == secret);
         
         System.out.println("Token validity: " + isValid);
