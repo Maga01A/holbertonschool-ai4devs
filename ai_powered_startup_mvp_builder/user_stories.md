@@ -1,7 +1,7 @@
 # User Stories - Smart Task Prioritizer
 
 ## User Story 1
-As a user, I want to add a new task with a title and deadline so that I can keep track of my upcoming work.
+As a user, I want to add a new task with a title and a deadline so that I can keep track of my upcoming work.
 
 ## User Story 2
 As a user, I want to assign an effort level (1-5) to each task so that the system can calculate its complexity.
@@ -10,22 +10,19 @@ As a user, I want to assign an effort level (1-5) to each task so that the syste
 As a busy professional, I want the system to automatically rank my tasks by priority so that I know exactly what to work on first.
 
 ## User Story 4
-As a user, I want to categorize my tasks (Work, Personal, Urgent) so that I can filter my view based on my current context.
+As a user, I want to categorize my tasks into groups like 'Work' or 'Personal' so that I can organize my thoughts better.
 
 ## User Story 5
-As a visual learner, I want to see my tasks in a Kanban board (To Do, Doing, Done) so that I can visualize my progress.
+As a visual learner, I want to see my tasks in a Kanban board layout so that I can visualize my current progress.
 
 ## User Story 6
-As a user, I want to edit or delete existing tasks so that I can keep my list updated as plans change.
+As a user, I want to drag and drop tasks between 'To Do' and 'Done' columns to update their status quickly.
 
 ## User Story 7
-As a user, I want to toggle between Light and Dark mode so that I can use the app comfortably at any time of day.
+As a user, I want to edit existing tasks to update their deadlines or effort levels as project requirements change.
 
 ## User Story 8
-As a goal-oriented user, I want to see a summary of completed tasks today so that I feel motivated by my productivity.
+As a user, I want my data to be stored locally in the browser so that I can access my task list without an internet connection.
 
 ## User Story 9
-As a user, I want my tasks to be saved locally in the browser so that I don't lose my data when I refresh the page.
-
-## User Story 10
-As a power user, I want to export my prioritized task list to a CSV file so that I can share it or use it in other tools.
+As a user, I want to export my prioritized task list to a CSV file so that I can share my productivity reports with others.
