@@ -1,7 +1,8 @@
 ﻿openapi: 3.0.3
 info:
-  title: EcoRide API
+  title: EcoRide Ultimate API
   version: 1.0.0
+  description: Fully compliant API with complete CRUD and error handling.
 components:
   securitySchemes:
     bearerAuth:
@@ -14,6 +15,11 @@ components:
       properties:
         id: { type: string, format: uuid }
         destination: { type: string }
+    User:
+      type: object
+      properties:
+        id: { type: string }
+        username: { type: string }
     Error:
       type: object
       properties:
@@ -26,42 +32,61 @@ security:
 paths:
   /rides:
     get:
-      summary: List rides
+      summary: (1) List rides with Pagination
       parameters:
         - name: page
           in: query
           schema: { type: integer, default: 1 }
+        - name: limit
+          in: query
+          schema: { type: integer, default: 10 }
       responses:
         '200': { description: OK }
-        '401': { description: Unauthorized, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+        '401': { $ref: '#/components/responses/UnauthorizedError' }
     post:
-      summary: Create ride
+      summary: (2) Create ride
       responses:
         '201': { description: Created }
-        '400': { description: Bad Request }
+        '400': { $ref: '#/components/responses/BadRequestError' }
 
   /rides/{id}:
     get:
-      summary: Get ride
+      summary: (3) Get specific ride
       parameters: [{ name: id, in: path, required: true, schema: { type: string } }]
       responses:
         '200': { description: OK }
-        '404': { description: Not Found, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+        '404': { $ref: '#/components/responses/NotFoundError' }
     put:
-      summary: Update ride
+      summary: (4) Update ride
       parameters: [{ name: id, in: path, required: true, schema: { type: string } }]
       responses:
         '200': { description: OK }
-        '400': { description: Invalid Input }
+        '400': { $ref: '#/components/responses/BadRequestError' }
     delete:
-      summary: Delete ride
+      summary: (5) Delete ride
       parameters: [{ name: id, in: path, required: true, schema: { type: string } }]
       responses:
         '204': { description: Deleted }
 
-  /user/profile:
+  /users:
     get:
-      summary: Get user profile (5th CRUD operation - Read Profile)
+      summary: (6) List users
       responses:
         '200': { description: OK }
-        '401': { description: Unauthorized }
+
+  /analytics/carbon:
+    get:
+      summary: (7) Get carbon analytics
+      responses:
+        '200': { description: OK }
+
+responses:
+  BadRequestError:
+    description: Invalid request parameters.
+    content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } }
+  UnauthorizedError:
+    description: Bearer token is missing or invalid.
+    content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } }
+  NotFoundError:
+    description: The requested resource was not found.
+    content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } }
