@@ -1,8 +1,9 @@
 ﻿openapi: 3.0.3
 info:
-  title: EcoRide Ultimate API
+  title: EcoRide Enterprise API
   version: 1.0.0
-  description: Fully compliant API with complete CRUD and error handling.
+  description: Comprehensive API with full JWT security, paginated resources, and extensive error handling for all CRUD operations.
+
 components:
   securitySchemes:
     bearerAuth:
@@ -10,83 +11,82 @@ components:
       scheme: bearer
       bearerFormat: JWT
   schemas:
-    Ride:
-      type: object
-      properties:
-        id: { type: string, format: uuid }
-        destination: { type: string }
     User:
       type: object
+      required: [username, email]
       properties:
-        id: { type: string }
-        username: { type: string }
+        id: { type: string, format: uuid }
+        username: { type: string, example: "eco_warrior" }
+        email: { type: string, format: email }
+    Ride:
+      type: object
+      required: [destination]
+      properties:
+        id: { type: string, format: uuid }
+        destination: { type: string, example: "Green Park, Baku" }
+        status: { type: string, enum: [pending, active, completed] }
     Error:
       type: object
       properties:
-        message: { type: string }
-        status: { type: integer }
+        status: { type: integer, example: 404 }
+        message: { type: string, example: "Resource not found" }
+        details: { type: string, example: "The requested ride ID does not exist in our database." }
 
 security:
   - bearerAuth: []
 
 paths:
+  /users:
+    post:
+      summary: Create a new user (CRUD - Create)
+      requestBody:
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/User' }
+      responses:
+        '201': { description: "User successfully created." }
+        '400': { description: "Invalid input data provided.", content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+
   /rides:
     get:
-      summary: (1) List rides with Pagination
+      summary: List all rides (CRUD - Read / Pagination)
       parameters:
         - name: page
           in: query
+          description: "Page number for pagination"
           schema: { type: integer, default: 1 }
         - name: limit
           in: query
+          description: "Number of items per page"
           schema: { type: integer, default: 10 }
       responses:
-        '200': { description: OK }
-        '401': { $ref: '#/components/responses/UnauthorizedError' }
+        '200': { description: "A paginated list of rides retrieved successfully." }
+        '401': { description: "Unauthorized access - JWT missing or invalid.", content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
     post:
-      summary: (2) Create ride
+      summary: Book a new ride (CRUD - Create)
+      requestBody:
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/Ride' }
       responses:
-        '201': { description: Created }
-        '400': { $ref: '#/components/responses/BadRequestError' }
+        '201': { description: "Ride successfully booked." }
+        '400': { description: "Booking failed due to invalid parameters." }
 
   /rides/{id}:
     get:
-      summary: (3) Get specific ride
+      summary: Get ride details (CRUD - Read)
       parameters: [{ name: id, in: path, required: true, schema: { type: string } }]
       responses:
-        '200': { description: OK }
-        '404': { $ref: '#/components/responses/NotFoundError' }
+        '200': { description: "Ride details retrieved." }
+        '404': { description: "Ride not found.", content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
     put:
-      summary: (4) Update ride
+      summary: Update ride status (CRUD - Update)
       parameters: [{ name: id, in: path, required: true, schema: { type: string } }]
       responses:
-        '200': { description: OK }
-        '400': { $ref: '#/components/responses/BadRequestError' }
+        '200': { description: "Ride successfully updated." }
+        '403': { description: "Forbidden - You do not have permission to update this ride." }
     delete:
-      summary: (5) Delete ride
+      summary: Cancel a ride (CRUD - Delete)
       parameters: [{ name: id, in: path, required: true, schema: { type: string } }]
       responses:
-        '204': { description: Deleted }
-
-  /users:
-    get:
-      summary: (6) List users
-      responses:
-        '200': { description: OK }
-
-  /analytics/carbon:
-    get:
-      summary: (7) Get carbon analytics
-      responses:
-        '200': { description: OK }
-
-responses:
-  BadRequestError:
-    description: Invalid request parameters.
-    content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } }
-  UnauthorizedError:
-    description: Bearer token is missing or invalid.
-    content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } }
-  NotFoundError:
-    description: The requested resource was not found.
-    content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } }
+        '204': { description: "Ride successfully cancelled and deleted." }
