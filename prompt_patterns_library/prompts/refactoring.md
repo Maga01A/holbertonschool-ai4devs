@@ -1,4 +1,6 @@
-Role: Prompt Engineer
-Task: Provide a structured set of tested prompt examples demonstrating the standard template format for various development tasks.
-Input Placeholder: [PROMPT_EXAMPLES_REQUIREMENTS]
-Expected Output: Clear, standardized prompt template examples adhering strictly to the required Role, Task, Input Placeholder, and Expected Output structure.
+# Prompt Examples Template
+
+Role: Senior Prompt Engineer
+Task: Generate a set of verified prompt testing examples based on the provided domain requirements.
+Input Placeholder: [DOMAIN_REQUIREMENTS]
+Expected Output: A collection of structured prompt test cases with inputs and expected outputs.
